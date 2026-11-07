@@ -5,6 +5,7 @@
 
 ## 1. Descripción del problema (Fase 1)
 <!-- Explica con tus palabras qué hace tu programa y para qué serviría en la vida real. Máximo 4 líneas. -->
+El programa lo que hace es 
 
 _____
 

@@ -1,14 +1,7 @@
 // Práctica: Ticket de compra
 // main() solo coordina: pide los datos, llama a los módulos y muestra el ticket.
 // Deja el comentario "// Paso N" sobre cada bloque, con la numeración de TU receta.
-//
-// Compilar (desde la carpeta del proyecto):
-//   g++ -Wall -Wextra -std=c++17 -Iinclude src/main.cpp -o ticket
-// Ejecutar:
-//   macOS:   ./ticket
-//   Windows: .\ticket.exe
 
-// ¿Recuerdas qué hace iostream?
 #include <iostream>
 #include <string>
 
@@ -17,21 +10,41 @@
 
 int main() {
     // Variables (siempre inicializadas)
-    // TODO: ¿cuántas necesitas? ¿De qué tipo es cada una?
+    std::string nombre = "";
+    double precio = 0;
+    int cantidad = 0;
+    double descuento = 0;
 
     // Paso 1: mensaje de bienvenida
     // TODO
 
     // Paso 2: pedir y validar los datos
-    // TODO: ¿qué función de utilerias.h usas para cada dato?
-    //       ¿Cómo vuelves a pedir un dato que está fuera de rango?
+        // Paso 2: pedir y validar los datos
+    nombre = leerCadena("Nombre del producto: ");
+
+    precio = leerDecimal("Precio: ");
+    while (precio <= 0) {
+        std::cout << "El precio debe ser mayor que 0\n";
+        precio = leerDecimal("Precio: ");
+    }
+
+    cantidad = leerEntero("Cantidad: ");
+    while (cantidad <= 0) {
+        std::cout << "La cantidad debe ser mayor que 0\n";
+        cantidad = leerEntero("Cantidad: ");
+    }
+
+    descuento = leerDecimal("Descuento (%): ");
+    while (descuento < 0 || descuento > 100) {
+        std::cout << "El descuento debe estar entre 0 y 100\n";
+        descuento = leerDecimal("Descuento (%): ");
+    }
 
     // Paso 3: calcular los importes llamando a los módulos de ticket.h
     // TODO
 
-    // Paso 4: imprimir el ticket
-    // TODO
+    // Paso 4: imprimir el ticket (provisional, solo para comprobar la lectura)
+    std::cout << nombre << " " << precio << " " << cantidad << " " << descuento << "\n";
 
-    // ¿Qué significa return 0;?
     return 0;
 }
