@@ -222,25 +222,25 @@ Poco: cambiaría la línea de la constante por una lectura, pero tendría que pa
 
 | # | Caso | Esperado (subtotal / descuento / IVA / total) | Obtenido | ¿Pasó? |
 |---|---|---|---|---|
-| 1 | Sin descuento | 100.00 / 0.00 / 16.00 / 116.00 | _____ | _____ |
-| 2 | Con descuento | 100.00 / 10.00 / 14.40 / 104.40 | _____ | _____ |
-| 3 | Descuento de 15 % | 600.00 / 90.00 / 81.60 / 591.60 | _____ | _____ |
-| 4 | Precio con centavos | 19.99 / 0.00 / 3.20 / 23.19 | _____ | _____ |
-| 5 | Descuento total | 90.00 / 90.00 / 0.00 / 0.00 | _____ | _____ |
-| 6 | Precio inválido | vuelve a pedir el precio dos veces; 40.00 / 0.00 / 6.40 / 46.40 | _____ | _____ |
-| 7 | Cantidad inválida | vuelve a pedir la cantidad dos veces; 20.00 / 0.00 / 3.20 / 23.20 | _____ | _____ |
-| 8 | Descuento inválido | vuelve a pedir el descuento dos veces; 100.00 / 20.00 / 12.80 / 92.80 | _____ | _____ |
-| 9 | Texto en el precio | vuelve a pedir el precio una vez; 100.00 / 0.00 / 16.00 / 116.00 | _____ | _____ |
-| 10 | Nombre con espacios | muestra el nombre completo; 25.50 / 0.00 / 4.08 / 29.58 | _____ | _____ |
-| 11 | Nombre vacío | vuelve a pedir el nombre una vez; 12.00 / 0.00 / 1.92 / 13.92 | _____ | _____ |
-| 12 | Caso propio 1: _____ | _____ | _____ | _____ |
-| 13 | Caso propio 2: _____ | _____ | _____ | _____ |
+| 1 | Sin descuento | 100.00 / 0.00 / 16.00 / 116.00 | ___116.00__ | ___Sí__ |
+| 2 | Con descuento | 100.00 / 10.00 / 14.40 / 104.40 | __104.40___ | __Sí___ |
+| 3 | Descuento de 15 % | 600.00 / 90.00 / 81.60 / 591.60 | __591.60___ | ___Sí__ |
+| 4 | Precio con centavos | 19.99 / 0.00 / 3.20 / 23.19 | _23.19____ | __Sí___ |
+| 5 | Descuento total | 90.00 / 90.00 / 0.00 / 0.00 | __0.00___ | ___Sí__ |
+| 6 | Precio inválido | vuelve a pedir el precio dos veces; 40.00 / 0.00 / 6.40 / 46.40 | __46.40___ | ___Sí__ |
+| 7 | Cantidad inválida | vuelve a pedir la cantidad dos veces; 20.00 / 0.00 / 3.20 / 23.20 | ___23.20__ | ___Sí__ |
+| 8 | Descuento inválido | vuelve a pedir el descuento dos veces; 100.00 / 20.00 / 12.80 / 92.80 | __92.80___ | ___Sí__ |
+| 9 | Texto en el precio | vuelve a pedir el precio una vez; 100.00 / 0.00 / 16.00 / 116.00 | __116.00___ | __Sí___ |
+| 10 | Nombre con espacios | muestra el nombre completo; 25.50 / 0.00 / 4.08 / 29.58 | __29.58___ | ___Sí__ |
+| 11 | Nombre vacío | vuelve a pedir el nombre una vez; 12.00 / 0.00 / 1.92 / 13.92 | __13.92___ | ___Sí__ |
+| 12 | Caso propio 1: / 1000 / 1 / 50 | __580.00___ | __580.00___ | __Sí___ |
+| 13 | Caso propio 2: _40 / 3 / 12.5 | __121.80___ | ___121.80__ | ___Sí__ |
 
 **En el caso 4 el IVA real es 3.1984. ¿Por qué mi ticket muestra 3.20?**
-_____
+__Porque uso `std::fixed` y `std::setprecision(2)`, que solo cambian cómo se muestra el número: lo redondea a dos decimales al imprimir, la variable sigue valiendo 3.1984.___
 
 **En el caso 10, ¿el ticket siguió alineado? Si no, ¿qué corregí?**
-_____
+__Sí siguió alineado, porque el ancho de `std::setw(12)` se aplica a las etiquetas y no al nombre del producto, así que el nombre largo no mueve las columnas.___
 
 ## 14. Generalización (Fase 4)
 
@@ -300,24 +300,24 @@ _____
 
 | Duda | Lo que ya intenté |
 |---|---|
-| _____ | _____ |
+| ___No aplica__ | _____ |
 
 ## 19. Reflexión final
 
 **¿Qué aprendí con esta práctica?**
-_____
+___Aprendí que se pueden compilar de una misma vez muchos datos, aprendí como aplicar descuentos y como funcionan mejor leerCadena,leerEntero,leerDecimal__
 
 **Ahora que terminé, ¿qué cambiaría de mi proceso?**
-_____
+___No cambiaría nada__
 
 **¿Qué fue lo más difícil y cómo lo resolví?**
-_____
+___Fueron los descuentos y. la IVA, lo resolvi con formulas matemáticas. __
 
 **¿Qué pregunta me quedó sin responder?**
-_____
+__Ninguna___
 
 **Comparado con las prácticas anteriores, donde todo estaba en `main()`, ¿dividir el programa en módulos me facilitó o me complicó el trabajo? ¿Por qué?**
-_____
+___Me lo complico más en el simple de hecho de tener que leer y cambiar entre pestañas en VS Code, fuera de eso es mejor tenerlo todo aquí.__
 
 **¿Cómo encontré el error de `calcularDescuento`? ¿Lo habría encontrado si solo hubiera probado sin descuento?**
 _____
@@ -327,7 +327,7 @@ _____
 **¿Cuántos commits hice durante la práctica?** _____
 
 **Si hice menos de 3, ¿por qué?**
-_____
+__No aplica___
 
 ## 21. Lista de verificación antes de entregar (Fase 5)
 
