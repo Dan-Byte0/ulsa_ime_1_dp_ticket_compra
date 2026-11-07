@@ -268,33 +268,36 @@ _____
 
 | Principio | Pregunta | ¿Lo cumple? | Evidencia |
 |---|---|---|---|
-| Correcto | ¿Pasa todas las pruebas de la tabla? | _____ | _____ |
-| Robusto | ¿Resiste datos inválidos sin fallar ni terminar? | _____ | _____ |
-| Legible | ¿Otra persona entiende tu código sin que se lo expliques? | _____ | _____ |
-| Modular | ¿Cada función hace una sola cosa? | _____ | _____ |
-| Sin números mágicos | ¿Los valores fijos tienen nombre? | _____ | _____ |
+| Correcto | ¿Pasa todas las pruebas de la tabla? | ___Sí__ | _____ |
+| Robusto | ¿Resiste datos inválidos sin fallar ni terminar? | __Sí___ | _____ |
+| Legible | ¿Otra persona entiende tu código sin que se lo expliques? | ___Sí__ | _____ |
+| Modular | ¿Cada función hace una sola cosa? | __Sí___ | _____ |
+| Sin números mágicos | ¿Los valores fijos tienen nombre? | ___Sí__ | _____ |
 | Fácil de mantener | Si cambia el IVA o quien atiende, ¿cuántas líneas cambias? | _____ | _____ |
 | Reutilizable | ¿Alguna de tus funciones serviría en otro programa? | _____ | _____ |
 
 ## 16. Reto obligatorio (Fase 4)
 
-**¿Qué reto elegí?** (número y nombre; el 4 no cuenta como obligatorio) _____
+**¿Qué reto elegí?** (número y nombre; el 4 no cuenta como obligatorio) __3, alinear los importes a la derecha___
 
 **¿Por qué lo elegí?**
-_____
+__
+__Porque es el que menos código cambia y deja el ticket más parecido a uno real.
+_
 
 **¿Cómo lo resolví? ¿Qué módulos agregué o cambié?**
-_____
+__Cambié solo `imprimirTicket`: usé `std::right` con `std::setw(10)` para los importes, y `std::left` para las etiquetas.
+___
 
 **¿Hice algún otro reto opcional? ¿Cuál?**
-_____
+___No aplica__
 
 ## 17. Bitácora de mejoras (Fase 4)
 
 | # | ¿Qué falló o qué quise mejorar? | ¿Qué cambié? | ¿Funcionó? |
 |---|---|---|---|
-| 1 | _____ | _____ | _____ |
-| 2 | _____ | _____ | _____ |
+| 1 |  No compilaba: escribí IVA en lugar de iva dentro de imprimirTicket | Lo corregí. era en minúscula, como se llama el parámetro | Sí |
+| 2| No compilaba: el nombre del vendedor no tenía comillas, y luego dos comillas al inicio | Lo escribí con una comilla al inicio y una al final | Sí |
 
 ## 18. Dudas para el profesor (Fase 3)
 

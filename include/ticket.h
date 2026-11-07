@@ -9,12 +9,17 @@
 inline double calcularSubtotal(double precio, int cantidad) {
     return precio * cantidad;
 }
+// Recibe: una cantidad y un porcentaje (de 0 a 100).
+// Devuelve: ese porcentaje de la cantidad.
+inline double calcularPorcentaje(double cantidad, double porcentaje) {
+    return cantidad * (porcentaje / 100);
+}
 
 // Recibe: el subtotal y el porcentaje de descuento (de 0 a 100).
 // Devuelve: el monto del descuento en pesos.
 // OJO: esta funcion tiene un error escondido a proposito. Lee la Fase 3.
 inline double calcularDescuento(double subtotal, double porcentaje) {
-    return subtotal * (porcentaje / 100);
+return calcularPorcentaje(subtotal, porcentaje);
 }
 
 
