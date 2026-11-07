@@ -47,8 +47,7 @@ int main() {
     double iva = calcularIVA(subtotal - montoDescuento);
     double total = subtotal - montoDescuento + iva;
     // Paso 4: imprimir el ticket (provisional, solo para comprobar la lectura)
-    std::cout << nombre << " " << precio << " " << cantidad << " " << descuento << "\n";
-        std::cout << subtotal << " " << montoDescuento << " " << iva << " " << total << "\n";
+      imprimirTicket(nombre, precio, cantidad, subtotal, montoDescuento, iva, total);
 
     return 0;
 }

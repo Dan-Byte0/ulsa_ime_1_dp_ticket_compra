@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 // Recibe: el precio de un producto y la cantidad comprada.
 // Devuelve: el subtotal (precio por cantidad).
@@ -24,4 +25,22 @@ inline double calcularIVA(double base) {
 }
 
 // TODO: imprimirTicket
-//       ¿Es función o procedimiento? ¿Qué datos necesita para imprimir el ticket?
+inline void imprimirTicket(std::string nombre, double precio, int cantidad,
+                           double subtotal, double montoDescuento,
+                           double iva, double total) {
+    std::cout << std::fixed << std::setprecision(2) << std::left;
+
+    std::cout << std::string(36, '=') << "\n";
+    std::cout << "          TICKET DE COMPRA\n";
+    std::cout << std::string(36, '=') << "\n";
+    std::cout << std::setw(12) << "Producto:" << nombre << "\n";
+    std::cout << std::setw(12) << "Precio:" << "$" << precio << "\n";
+    std::cout << std::setw(12) << "Cantidad:" << cantidad << "\n";
+    std::cout << std::string(36, '-') << "\n";
+    std::cout << std::setw(12) << "Subtotal:" << "$" << subtotal << "\n";
+    std::cout << std::setw(12) << "Descuento:" << "$" << montoDescuento << "\n";
+    std::cout << std::setw(12) << "IVA (16%):" << "$" << iva<< "\n";
+    std::cout << std::string(36, '-') << "\n";
+    std::cout << std::setw(12) << "TOTAL:" << "$" << total << "\n";
+    std::cout << std::string(36, '=') << "\n";
+}
