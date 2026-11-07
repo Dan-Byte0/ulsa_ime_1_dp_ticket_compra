@@ -42,9 +42,13 @@ int main() {
 
     // Paso 3: calcular los importes llamando a los módulos de ticket.h
     // TODO
-
+    double subtotal = calcularSubtotal(precio, cantidad);
+    double montoDescuento = calcularDescuento(subtotal, descuento);
+    double iva = calcularIVA(subtotal - montoDescuento);
+    double total = subtotal - montoDescuento + iva;
     // Paso 4: imprimir el ticket (provisional, solo para comprobar la lectura)
     std::cout << nombre << " " << precio << " " << cantidad << " " << descuento << "\n";
+        std::cout << subtotal << " " << montoDescuento << " " << iva << " " << total << "\n";
 
     return 0;
 }

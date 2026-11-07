@@ -17,7 +17,11 @@ inline double calcularDescuento(double subtotal, double porcentaje) {
 }
 
 // TODO: calcularIVA
-//       ¿Qué recibe? ¿Qué devuelve? ¿Dónde guardas la tasa del 16 %?
+const double TASA_IVA = 16.0;
+
+inline double calcularIVA(double base) {
+    return base * (TASA_IVA / 100);
+}
 
 // TODO: imprimirTicket
 //       ¿Es función o procedimiento? ¿Qué datos necesita para imprimir el ticket?
