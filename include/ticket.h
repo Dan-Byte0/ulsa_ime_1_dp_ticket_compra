@@ -17,14 +17,15 @@ inline double calcularDescuento(double subtotal, double porcentaje) {
     return subtotal * (porcentaje / 100);
 }
 
-// TODO: calcularIVA
+
 const double TASA_IVA = 16.0;
+const std::string VENDEDOR = "Daniel";
 
 inline double calcularIVA(double base) {
     return base * (TASA_IVA / 100);
 }
 
-// TODO: imprimirTicket
+
 inline void imprimirTicket(std::string nombre, double precio, int cantidad,
                            double subtotal, double montoDescuento,
                            double iva, double total) {
@@ -42,5 +43,6 @@ inline void imprimirTicket(std::string nombre, double precio, int cantidad,
     std::cout << std::setw(12) << "IVA (16%):" << "$" << iva<< "\n";
     std::cout << std::string(36, '-') << "\n";
     std::cout << std::setw(12) << "TOTAL:" << "$" << total << "\n";
+    std::cout << std::setw(12) << "Le atendio:" << VENDEDOR << "\n";
     std::cout << std::string(36, '=') << "\n";
 }
